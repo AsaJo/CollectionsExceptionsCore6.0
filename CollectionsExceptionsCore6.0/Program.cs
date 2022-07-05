@@ -40,16 +40,71 @@ Dictionary<string, DateTime> dict = new Dictionary<string, DateTime>();
 
 dict["today"] = DateTime.Now;
 
-Console.WriteLine(DateTime.Now);
+Console.WriteLine(DateTime.Now);    
 
 //**************************** Collections - List Initialization **************************
 
 List<int> listInt = new List<int> { 5, 7, 8, 1, 2, 7, 1 };
 
-new Dictionary<string, string> { {"Marcus", "marcus@lexicon.se" },
-                                 {"Kent","kent@lexicon.se" },
-                                 {"Simon","says@lexicon.se" },
-                                };
+//new Dictionary<string, string> { {"Marcus", "marcus@lexicon.se" },
+//                                 {"Kent","kent@lexicon.se" },
+//                                 {"Simon","says@lexicon.se" },
+//                                };
+
+//**************************** Collections - foreach Loops *********************************
+
+//foreach (int item in listInt)
+//{
+//    Console.WriteLine(item);
+//}
+
+//**************************** Exceptions **************************************************
+
+//string value = "";
+
+//if (value == null)
+//{
+//    throw new CustomException("value is null");
+//}
+
+static void CauseException()
+{
+    throw new CustomException();
+}
+try
+{
+    CauseException();
+    // any code here will NOT be run
+}
+catch (CustomException)
+{
+
+    //The Exception will BE handled here
+}
+finally
+{
+    // This code will always happen, even
+    // if the method ends in try or catch
+}
+
+
+class CustomException : Exception {
+
+    public CustomException() {
+
+    }
+
+    static public void CauseException()
+    {
+        throw new CustomException();
+    }
+
+
+}
+
+
+
+
 
 
 
